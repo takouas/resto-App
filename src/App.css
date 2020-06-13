@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+.logo{
+  width: 60px;
+
+}
+.container-navbar-logo{
+  display: flex;
+}
+.container-navbar{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #d10029;
+  color: aliceblue;
+}
+.card{
+width: 25px;
+}
+.containere-card-food{
+  background-image: url(http://pizzahuttunisia.com/wp-content/uploads/2016/09/home_pizza2_sectionbg1.jpg?id=28);
+  display: flex;
+  flex-flow: row wrap;
+justify-content: space-evenly;
+margin-top: 15px;
+width: 100%;
+}
+.card-food{
+  color: black;
+  background-color:white;
+   width: 280px;
+ 
+    border-radius: 10px;
+     margin-bottom: 20px; 
+    padding: 10px 0px; 
+    margin: 25px;
+}
+.size-image-food{
+  width: 100%;
+  height: 250px;
+}
+.size-image-add{
+  width: 30px;
+}
+.btn-add{
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.footer{
+ padding-top: 45px;
+  background-image:url(http://pizzahuttunisia.com/wp-content/uploads/2016/09/home_pizza2_sectionbg4.jpg) ;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fa{
+  font-size:40px;
+  margin-left:10px
+}
