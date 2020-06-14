@@ -2,7 +2,7 @@
   text-align: center;
 }
 .logo{
-  width: 60px;
+  width: 40px;
 
 }
 .container-navbar-logo{
@@ -33,9 +33,9 @@ margin-top: 15px;
 .card-food{
   color: black;
   background-color:rgb(255, 255, 255,0.8);
-   width: 280px;
+   width: 260px;
  
-    border-radius: 10px;
+    border-radius: 5px;
      margin-bottom: 20px; 
     padding: 10px 0px; 
     margin: 25px;

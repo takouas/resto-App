@@ -42,6 +42,15 @@ function basketNumbers(state = initialState, action) {
 
 }
 
+const tabUsers = []
+
+
+function usersReducer(state = tabUsers, action) {
+    if (action.type === "userdata") {
+        return state = action.data;
+    }
+    return state;
+};
 
 
 
@@ -49,7 +58,8 @@ function basketNumbers(state = initialState, action) {
 const allReducers = combineReducers({
     menuReducerkey: reducersFood,
     getFoodFromApiListReducer: reducersFoodlist,
-    basketNumbers: basketNumbers
+    basketNumbers: basketNumbers,
+    usersReducer: usersReducer
 })
 
 export default allReducers

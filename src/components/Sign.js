@@ -1,12 +1,27 @@
 
 import { connect } from 'react-redux';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
-import { Sign } from '../action/action';
+import { Sign, getUserFromApi } from '../action/action';
 import React, { Component } from 'react'
 class ModalExampleCloseIcon extends Component {
+    state = {
+        emailTest: '',
+        passwordTest: ''
+    }
+    componentDidMount() {
+        this.props.getUserFromApi()
+    }
+    comparaison = () => {
+        // if (this.state.emailTest === this.props.usersReducer.email && this.state.passwordTest === this.props.usersReducer.password)
+        //     return alert('hello')
+        // else {
+        //     return alert('dowyw')
+        // }
 
+    }
     render() {
-
+        console.log(this.state.emailTest)
+        console.log(this.props.usersReducer.email)
         return (
             <Modal trigger={<button className="btn-sign"><i className="fa fa-user navIcon" ></i></button>} closeIcon>
 
@@ -25,8 +40,7 @@ class ModalExampleCloseIcon extends Component {
 
                                 <div className="form-group">
 
-                                    <input id='email' type="email" className
-                                        placeholder="Enter email" className="form-control" onChange={(e) => { this.setState({ email: e.target.value }) }}
+                                    <input id='email' type="email" pattern=".+@(gmail\.com|yahoo\.fr)" placeholder="Enter email" className="form-control" onChange={(e) => { this.setState({ email: e.target.value }) }}
                                     />
                                 </div>
                                 <br />
@@ -59,15 +73,18 @@ class ModalExampleCloseIcon extends Component {
 
                                 <div className="form-group">
 
-                                    <input id='emailSave' type="email" pattern=".+@(gmail\.com|yahoo\.fr)" className="form-control" placeholder="Enter email" required />
+                                    <input id='emailSave' type="email" pattern=".+@(gmail\.com|yahoo\.fr)" className="form-control" placeholder="Enter email" onChange={(e) => { this.setState({ emailTest: e.target.value }) }} />
                                 </div>
                                 <br />
                                 <div className="form-group">
 
-                                    <input id='passwordSave' type="password" maxLength="6" className="form-control" placeholder="Enter password" required />
+                                    <input id='passwordSave' type="password" maxLength="6" className="form-control" placeholder="Enter password" onChange={(e) => { this.setState({ passwordTest: e.target.value }) }} />
                                 </div>
                                 <br />
-                                <button type="submit" className="btn-sign-compte"> Sign In </button>
+                                <button type="submit" className="btn-sign-compte"
+                                    onClick={() => this.comparaison} > Sign In </button>
+
+
 
                             </form>
                         </div >
@@ -80,12 +97,12 @@ class ModalExampleCloseIcon extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    usersReducer: state.usersReducer
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    sign: (e) => dispatch(Sign(e))
-
+    sign: (e) => dispatch(Sign(e)),
+    getUserFromApi: () => dispatch(getUserFromApi())
 });
 
 
@@ -93,8 +110,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalExampleCloseIcon)
-
-
-
-
 

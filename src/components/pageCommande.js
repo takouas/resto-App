@@ -9,8 +9,7 @@ class PageCommande extends Component {
 
         return (
             <div>
-                <p>{this.props.basketNumbers.total}</p>
-                <p>{this.props.basketNumbers.basketNumbers}</p>
+
                 <div className='containere-card-food'>
 
                     {this.props.getFoodFromApiListReducer.map((el, i) => (<center key={i} className='card-food'>
@@ -31,7 +30,7 @@ class PageCommande extends Component {
 
 
                 </div>
-                <button onClick={() => this.props.addBasket()}>Total </button>
+                <button >Total </button>
 
             </div>
         )
@@ -39,14 +38,14 @@ class PageCommande extends Component {
 }
 const mapStateToProps = (state) => ({
     getFoodFromApiListReducer: state.getFoodFromApiListReducer,
-    basketNumbers: state.basketNumbers
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
     getListFromApiList: () => dispatch(getListFromApiList()),
     incrementFoodToApi: (el, id) => dispatch(incrementFoodToApi(el, id)),
     decrementFoodToApi: (el, id) => dispatch(decrementFoodToApi(el, id)),
-    addBasket: () => (el) => dispatch(addBasket(el)),
+
     deleteFood: (el) => dispatch(deleteFood(el))
 });
 

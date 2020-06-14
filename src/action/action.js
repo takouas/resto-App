@@ -74,17 +74,23 @@ export function incrementFoodToApi(el, id) {
 
 export function decrementFoodToApi(el, id) {
 
+    return () => {
+        if (el.numbers <= 1) { el.numbers = 1 }
+        else {
 
-    return () =>
-        axios.patch(`http://localhost:3000/list/${id}`, {
-
-            numbers: el.numbers - 1,
+            axios.patch(`http://localhost:3000/list/${id}`, {
 
 
-        }).then((res) =>
-            console.log(res.data),
-            window.location.reload()
-        );
+                numbers: el.numbers - 1,
+
+
+            }).then((res) =>
+                console.log(res.data),
+                window.location.reload()
+            );
+        }
+    }
+
 }
 
 
@@ -101,10 +107,21 @@ export function deleteFood(el) {
 
 export const Sign = (el) => {
     return axios.post('http://localhost:3000/users', el)
-        .then((response) => {
+        .then(() => {
             alert('welcome')
         })
 };
 
+export function userdata(data) {
+    return {
+        type: "userdata",
+        data
+    }
+}
 
-
+export const getUserFromApi = () => {
+    return (dispatch) =>
+        axios.get("http://localhost:3000/Users").then((res) => {
+            dispatch(userdata(res.data));
+        });
+}
