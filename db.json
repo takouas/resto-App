@@ -65,5 +65,41 @@
       "incart": false
     }
   ],
-  "list": []
+  "list": [
+    {
+      "id": 1,
+      "image": "https://img.cuisineaz.com/610x610/2013-12-20/i387-pizza-thon.jpeg",
+      "title": "pizza au thon",
+      "price": 5,
+      "numbers": 3
+    },
+    {
+      "id": 2,
+      "image": "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_600,q_auto,w_800/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/169663/recette-de-ojja-tunisienne-1.jpg",
+      "title": "Ojja tunisienne aux oeufs",
+      "price": 6,
+      "numbers": 1
+    },
+    {
+      "id": 4,
+      "image": "https://cuisine.nessma.tv/uploads/1/2019-06/4a6441eae37be7da3c49f44dfdb1e9d6.jpg",
+      "title": "Pizza roulée ",
+      "price": 3,
+      "numbers": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "t",
+      "email": "t@gmail.com",
+      "password": "000",
+      "id": 1
+    },
+    {
+      "name": "takoua",
+      "email": "t@gmail.com",
+      "password": "000",
+      "id": 2
+    }
+  ]
 }

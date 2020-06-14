@@ -17,16 +17,16 @@ class ListFood extends Component {
             <div>
 
                 <div className='containere-card-food'>
-                    {this.props.listFood.map((el, i) => (<div key={i} className='card-food'>
+                    {this.props.listFood.map((el, i) => (<center key={i} className='card-food'>
                         <span>
                             <p>{el.title}</p>
                             <img className='size-image-food' src={el.image} />
                             <p>{el.price}<span>DT</span> </p>
 
 
-                            <button onClick={() => this.props.addFood(el)}> <img className='size-image-add' src='https://cdn2.iconfinder.com/data/icons/shopping-and-e-commerce-paper-flat-vol-1/100/add__cart__shopping__plus__shop__ecommerce__Addtocart-512.png' /></button>
+                            <button className='btn-add-food' onClick={() => this.props.addFood(el)}> <img className='size-image-add' src='https://cdn2.iconfinder.com/data/icons/shopping-and-e-commerce-paper-flat-vol-1/100/add__cart__shopping__plus__shop__ecommerce__Addtocart-512.png' /></button>
                         </span>
-                    </div>
+                    </center>
                     ))}
                 </div>
 

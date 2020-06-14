@@ -20,8 +20,8 @@ function App() {
             <h2>yammy food</h2>
           </span>
           <span >
-            <Link to='/'><i class="fa fa-home"></i></Link>
-            <Link to='/pageCommande'> <i className="fa fa-shopping-basket"></i>
+            <Link to='/'><i className="fa fa-home navIcon"></i></Link>
+            <Link to='/pageCommande'> <i className="fa fa-shopping-basket navIcon"></i>
             </Link>
             <ModalExampleCloseIcon />
           </span>

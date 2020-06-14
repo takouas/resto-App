@@ -13,20 +13,22 @@ class PageCommande extends Component {
                 <p>{this.props.basketNumbers.basketNumbers}</p>
                 <div className='containere-card-food'>
 
-                    {this.props.getFoodFromApiListReducer.map((el, i) => (<div key={i} className='card-food'>
+                    {this.props.getFoodFromApiListReducer.map((el, i) => (<center key={i} className='card-food'>
                         <span>
                             <p>{el.title}</p>
                             <img className='size-image-food' src={el.image} />
                             <p> {el.price * el.numbers}<span>DT</span> </p>
+                            <sapn>   <button className='btn-decin' onClick={() => this.props.incrementFoodToApi(el, el.id)}>+</button>
+                                <span>{el.numbers}</span>
+                                <button className='btn-decin' onClick={() => this.props.decrementFoodToApi(el, el.id)}>-</button></sapn> <br />
 
-                            <button onClick={() => this.props.incrementFoodToApi(el, el.id)}>+</button>
-                            <p>{el.numbers}</p>
-                            <button onClick={() => this.props.decrementFoodToApi(el, el.id)}>-</button>
-                            <button onClick={() => this.props.deleteFood(el)}>delete</button>
+                            <button className='btn-trash' onClick={() => this.props.deleteFood(el)}><i className="fa fa-trash trash"></i></button>
                         </span>
 
-                    </div>
+                    </center>
                     ))}
+
+
 
                 </div>
                 <button onClick={() => this.props.addBasket()}>Total </button>

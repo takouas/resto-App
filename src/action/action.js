@@ -57,7 +57,6 @@ export const addBasket = (nameOfFood) => {
 
 export function incrementFoodToApi(el, id) {
 
-    let priceInitial = el.price
     return () =>
         axios.patch(`http://localhost:3000/list/${id}`, {
 
@@ -98,3 +97,14 @@ export function deleteFood(el) {
 
         );
 }
+
+
+export const Sign = (el) => {
+    return axios.post('http://localhost:3000/users', el)
+        .then((response) => {
+            alert('welcome')
+        })
+};
+
+
+
