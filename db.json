@@ -65,27 +65,5 @@
       "incart": false
     }
   ],
-  "list": [
-    {
-      "id": 1,
-      "image": "https://img.cuisineaz.com/610x610/2013-12-20/i387-pizza-thon.jpeg",
-      "title": "pizza au thon",
-      "price": 5,
-      "numbers": 0
-    },
-    {
-      "id": 2,
-      "image": "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_600,q_auto,w_800/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/169663/recette-de-ojja-tunisienne-1.jpg",
-      "title": "Ojja tunisienne aux oeufs",
-      "price": 6,
-      "numbers": 0
-    },
-    {
-      "id": 3,
-      "image": "https://www.legardemanger28.com/wp-content/uploads/2019/06/cropped-pizza-2-2.jpg",
-      "title": "pizza margherita ",
-      "price": 5,
-      "numbers": 0
-    }
-  ]
+  "list": []
 }

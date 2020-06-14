@@ -25,6 +25,10 @@ const initialState = {
 
 }
 
+
+
+
+
 function basketNumbers(state = initialState, action) {
     if (action.type === "ADD_FOOD_BASKET") {
         return {
@@ -32,10 +36,12 @@ function basketNumbers(state = initialState, action) {
             total: state.total + action.data.price,
 
         }
+
     }
     return state
 
 }
+
 
 
 

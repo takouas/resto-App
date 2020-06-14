@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getListFromApi, addFoodToApi, addBasket } from '../action/action';
+import { getListFromApi, addFoodToApi } from '../action/action';
 
 
 class ListFood extends Component {
@@ -24,7 +24,7 @@ class ListFood extends Component {
                             <p>{el.price}<span>DT</span> </p>
 
 
-                            <button onClick={() => { this.props.addFood(el); this.props.addBasket(el) }}> <img className='size-image-add' src='https://cdn2.iconfinder.com/data/icons/shopping-and-e-commerce-paper-flat-vol-1/100/add__cart__shopping__plus__shop__ecommerce__Addtocart-512.png' /></button>
+                            <button onClick={() => this.props.addFood(el)}> <img className='size-image-add' src='https://cdn2.iconfinder.com/data/icons/shopping-and-e-commerce-paper-flat-vol-1/100/add__cart__shopping__plus__shop__ecommerce__Addtocart-512.png' /></button>
                         </span>
                     </div>
                     ))}
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     getMenu: () => dispatch(getListFromApi()),
     addFood: (el) => dispatch(addFoodToApi(el)),
-    addBasket: (el) => dispatch(addBasket(el))
+
 
 });
 
