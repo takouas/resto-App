@@ -32,12 +32,10 @@ margin-top: 15px;
 }
 .card-food{
   color: black;
-  background-color:rgb(255, 255, 255,0.8);
+  background-color:rgb(255, 255, 255,0.1);
    width: 260px;
- 
+ color:whitesmoke;
     border-radius: 5px;
-     margin-bottom: 20px; 
-    padding: 10px 0px; 
     margin: 25px;
 }
 .size-image-food{
@@ -46,6 +44,7 @@ margin-top: 15px;
 }
 .size-image-add{
   width: 30px;
+
 }
 .btn-add{
   background-color: transparent;
@@ -78,6 +77,7 @@ margin-top: 15px;
   background-image: url(https://www.fugenx.com/wp-content/uploads/2017/10/Modak-app-background-1.jpg);
   background-size: cover;
 
+
 }
 .btn-sign{
   background-color: transparent;
@@ -103,6 +103,7 @@ margin-top: 15px;
 .btn-add-food{
   background-color: transparent;
   border: none; 
+
 }
 .trash{
 
@@ -115,3 +116,6 @@ color: red;
    margin-bottom: 5px;
    padding: 10px;
 }
+/* .box-price{
+  border: solid 2px rgba(208, 211, 49, 0.699);
+} */

@@ -5,23 +5,28 @@ import { Sign, getUserFromApi } from '../action/action';
 import React, { Component } from 'react'
 class ModalExampleCloseIcon extends Component {
     state = {
-        emailTest: '',
-        passwordTest: ''
+        email: '',
+        password: ''
     }
     componentDidMount() {
         this.props.getUserFromApi()
     }
     comparaison = () => {
-        // if (this.state.emailTest === this.props.usersReducer.email && this.state.passwordTest === this.props.usersReducer.password)
-        //     return alert('hello')
-        // else {
-        //     return alert('dowyw')
+        // let users = this.props.usersReducer
+
+        // for (let i = 0; i < users.length; i++) {
+        //     if (users[i].email == this.state.email && users[i].password == this.state.password)
+        //     return alert(users.length)
         // }
 
+
+
     }
+
     render() {
-        console.log(this.state.emailTest)
-        console.log(this.props.usersReducer.email)
+        // console.log(this.state)
+
+        // console.log(this.props.usersReducer)
         return (
             <Modal trigger={<button className="btn-sign"><i className="fa fa-user navIcon" ></i></button>} closeIcon>
 
@@ -82,7 +87,7 @@ class ModalExampleCloseIcon extends Component {
                                 </div>
                                 <br />
                                 <button type="submit" className="btn-sign-compte"
-                                    onClick={() => this.comparaison} > Sign In </button>
+                                    onClick={() => this.comparaison()} > Sign In </button>
 
 
 

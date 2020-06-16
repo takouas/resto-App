@@ -71,6 +71,13 @@
       "image": "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_600,q_auto,w_800/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/recipe_photos/original/169663/recette-de-ojja-tunisienne-1.jpg",
       "title": "Ojja tunisienne aux oeufs",
       "price": 6,
+      "numbers": 2
+    },
+    {
+      "id": 5,
+      "image": "https://de6w58nmdl2d4.cloudfront.net/wp-content/uploads/2019/06/Formules-Poulet-Braise.jpg",
+      "title": "Poulet Braisé",
+      "price": 10,
       "numbers": 1
     }
   ],
@@ -82,15 +89,10 @@
       "id": 1
     },
     {
+      "name": "tak",
+      "email": "takouasimplon@gmail.com",
+      "password": "000",
       "id": 2
-    },
-    {
-      "name": "takoua",
-      "id": 3
-    },
-    {
-      "name": "t",
-      "id": 4
     }
   ]
 }
