@@ -2,42 +2,42 @@
 import { connect } from 'react-redux';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
 import { Sign, getUserFromApi } from '../action/action';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import React, { Component } from 'react'
+import ListFood from './listFood'
+var link = "";
 class ModalExampleCloseIcon extends Component {
     state = {
         email: '',
         password: ''
     }
+
     componentDidMount() {
         this.props.getUserFromApi()
     }
+
     comparaison = () => {
-        // let users = this.props.usersReducer
 
-        // for (let i = 0; i < users.length; i++) {
-        //     if (users[i].email == this.state.email && users[i].password == this.state.password)
-        //     return alert(users.length)
-        // }
+        let users = this.props.usersReducer
 
+        const x = users.filter(el => el.email === this.state.email && el.password == this.state.password)
+        console.log(x[0])
+        x.length === 0 ? alert('nexiste pas') : (x[0].email === 'takouasimplon@gmail.com' ? window.location.pathname = '/Admin' : window.location.pathname = '/ListFood')
 
 
     }
 
     render() {
-        // console.log(this.state)
 
-        // console.log(this.props.usersReducer)
         return (
             <Modal trigger={<button className="btn-sign"><i className="fa fa-user navIcon" ></i></button>} closeIcon>
 
                 <Modal.Content >
                     <center>
                         <div className='box-sigg-in'>
-                            <form>
+                            <div>
                                 <h3>Sign Up</h3>
-
                                 <div className="form-group">
-
                                     <input id='name' type="text" placeholder=" name" className="form-control" onChange={(e) => this.setState({ name: e.target.value })}
                                     />
                                 </div>
@@ -51,7 +51,7 @@ class ModalExampleCloseIcon extends Component {
                                 <br />
                                 <div className="form-group">
 
-                                    <input id='password' type="password" placeholder="Enter password" maxLength="6" className="form-control" onChange={(e) => { this.setState({ password: e.target.value }) }}
+                                    <input id='password' type="password" placeholder="Enter password" onChange={(e) => { this.setState({ password: e.target.value }) }}
                                     />
                                 </div>
                                 <br />
@@ -68,30 +68,21 @@ class ModalExampleCloseIcon extends Component {
                                         "password": this.state.password,
                                     })
                                 }>Sign Up</button>
+                            </div>
 
-
-
-                            </form>
-
-                            <form>
+                            <div>
                                 <h3>Sign In</h3>
-
-                                <div className="form-group">
-
-                                    <input id='emailSave' type="email" pattern=".+@(gmail\.com|yahoo\.fr)" className="form-control" placeholder="Enter email" onChange={(e) => { this.setState({ emailTest: e.target.value }) }} />
+                                <div className="fo">
+                                    <input id='emailSave' type="email" pattern=".+@(gmail\.com|yahoo\.fr)" className="form-control" placeholder="Enter email" onChange={(e) => { this.setState({ email: e.target.value }) }} />
                                 </div>
                                 <br />
-                                <div className="form-group">
-
-                                    <input id='passwordSave' type="password" maxLength="6" className="form-control" placeholder="Enter password" onChange={(e) => { this.setState({ passwordTest: e.target.value }) }} />
+                                <div>
+                                    <input id='passwordSave' type="password" placeholder="Enter password" onChange={(e) => { this.setState({ password: e.target.value }) }} />
                                 </div>
                                 <br />
-                                <button type="submit" className="btn-sign-compte"
-                                    onClick={() => this.comparaison()} > Sign In </button>
+                                <Link to={link}><button onClick={this.comparaison}>Sign in</button> </Link>
 
-
-
-                            </form>
+                            </div>
                         </div >
                     </center>
                 </Modal.Content>

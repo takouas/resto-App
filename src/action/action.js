@@ -125,3 +125,46 @@ export const getUserFromApi = () => {
             dispatch(userdata(res.data));
         });
 }
+
+export function deleteFoodFromListOfHome(el) {
+    return () =>
+        axios.delete(`http://localhost:3000/posts/${el.id}`).then((res) =>
+            console.log(res.data), window.location.reload());
+}
+
+
+
+export const postFoodFromListOfHome = (el) => {
+    window.location.reload()
+    return () => {
+        axios.post('http://localhost:3000/posts', el)
+            .then((res) =>
+                console.log(res.data)
+            )
+    }
+};
+
+
+
+
+
+export function editFoodInListOfHome(el,image, title, price) {
+    // console.log(el)
+ 
+    return () => {
+        axios.patch(`http://localhost:3000/posts/${el.id}`, {
+
+            "image":image,
+            "title":title,
+            "price":price,
+
+
+        }).then((res) =>
+            console.log(res.data),
+
+             window.location.reload()
+        );
+
+    }
+
+}

@@ -2,8 +2,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getListFromApi, addFoodToApi } from '../action/action';
-
-
+import Footer from './footer';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import Commande from './commande'
 class ListFood extends Component {
     componentDidMount() {
         this.props.getMenu();
@@ -15,6 +16,18 @@ class ListFood extends Component {
 
         return (
             <div>
+                <div>
+                    <div className='container-navbar'>
+                        <span className='container-navbar-logo'>
+                            <img className="logo" src="https://images.vexels.com/media/users/3/136309/isolated/preview/c6539229ad5c57c313d95711a1e676db-logo-burger-fast-food-by-vexels.png" />
+                            <h2>yammy food</h2>
+                        </span>
+                        <span >
+                            <Commande />
+                        </span>
+                        <span> <Link to='/'> <h6 className='logOut'>log out</h6></Link></span>
+                    </div>
+                </div>
 
                 <div className='containere-card-food'>
                     {this.props.listFood.map((el, i) => (<center key={i} className='card-food'>
@@ -29,7 +42,7 @@ class ListFood extends Component {
                     </center>
                     ))}
                 </div>
-
+                <Footer />
             </div>
         );
     }

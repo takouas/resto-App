@@ -14,21 +14,16 @@ class PageCommande extends Component {
 
 
     price = () => {
-
         const totalPrix = this.props.getFoodFromApiListReducer.map(el => el.price * el.numbers)
         let somme = 0
         for (let i = 0; i < totalPrix.length; i++) {
             somme += totalPrix[i];
-
             this.setState({ s: somme + 'DT' })
         }
         return somme
-
     }
 
     render() {
-        console.log('hyh')
-
 
         return (
             <div>
@@ -39,7 +34,7 @@ class PageCommande extends Component {
                         <span>
                             <p>{el.title}</p>
                             <img className='size-image-food' src={el.image} />
-                            <p>prix : {el.price * el.numbers}<>DT</> </p>
+                            <p>prix : {el.price}<>DT</> </p>
                             <>   <button className='btn-decin' onClick={() => this.props.incrementFoodToApi(el, el.id)}>+</button>
                                 <span>{el.numbers}</span>
                                 <button className='btn-decin' onClick={() => this.props.decrementFoodToApi(el, el.id)}>-</button></> <br />
@@ -49,9 +44,6 @@ class PageCommande extends Component {
 
                     </center>
                     ))}
-
-
-
                 </div>
                 <br />
                 <center> <button className='btn-sign-compte' onClick={() => this.price()}>Total : </button> {this.state.s} </center>
